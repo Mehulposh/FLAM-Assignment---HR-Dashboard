@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import useSearch from '@/customHooks/useSearch'
 
@@ -10,6 +11,7 @@ const SearchBar = () => {
             placeholder='Search by name, email, or department'
             value={query}
             onChange={e => setQuery(e.target.value)}
+            className='bg-gray-700 p-2 rounded m-3 w-[50%] font-semibold text-gray-200 text-lg'
         />
     </div>
   )
