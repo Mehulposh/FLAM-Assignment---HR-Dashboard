@@ -1,18 +1,33 @@
+"use client"
 import EmployeeCard from "@/components/EmployeeCard/EmployeeCard";
+import Filter from "@/components/FilterDropdown/Filter";
 import SearchBar from "@/components/SearchBar/SearchBar";
-import { getEmployees } from "@/lib/api";
+import useEmployeeStore from "@/store/Employee";
+import { useEffect } from "react";
 
-export default async function Home() {
-  const employees = await getEmployees();
+export default  function Home() {
+
+  const {filteredEmployees,fetchEmployees,filterEmployees} = useEmployeeStore();
+  
+  
+  useEffect( () => {
+    fetchEmployees();
+
+  },[fetchEmployees])
+
+  const handleFilter = ({departments,ratings}) => {
+    filterEmployees({departments,ratings});
+  }
  
   return (
     <main>
-      <div>
+      <div className="flex items-center gap-4 w-[80%]">
         <SearchBar />
+        <Filter onChange={handleFilter} />
 
       </div>
       <div className="flex flex-wrap gap-4 p-3">
-        {employees.map(emp => (
+        {filteredEmployees.map(emp => (
           <EmployeeCard key={emp.id} employee={emp}/>
         ))}
       </div>

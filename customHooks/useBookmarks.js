@@ -1,4 +1,4 @@
-import useBookmarksStore from "@/store/BookmarkStore";
+import useBookmarksStore from "@/store/Employee";
 
 
 const useBookmarks = () => {
