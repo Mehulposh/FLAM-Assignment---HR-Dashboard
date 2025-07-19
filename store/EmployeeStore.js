@@ -12,6 +12,8 @@ const useEmployeeStore = create((set,get) => ({
     bookmarks: [],
 
     //Employee Actions
+
+    //fetch employees from api
     fetchEmployees: async () => {
         if(get().employees.length > 0) return ;
 
@@ -33,6 +35,7 @@ const useEmployeeStore = create((set,get) => ({
         }
     },
 
+    //filter employees based on department and ratings
     filterEmployees: ({departments,ratings}) => {
         const {employees} = get();
         console.log(departments , ratings)
@@ -49,8 +52,35 @@ const useEmployeeStore = create((set,get) => ({
         })
     },
 
+    //search employees based on name ,email and  department
+    searchEmployees: (query) => {
+        const {employees} = get();
 
+        if(!query.trim()){
+            set({filteredEmployees: employees})
+            return;
+        }
 
+        const filtered = employees.filter(emp => 
+            emp.name.toLowerCase().includes(query.toLowerCase()) ||
+            emp.department.toLowerCase().includes(query.toLowerCase()) ||
+            emp.email.toLowerCase().includes(query.toLowerCase()) 
+        );
+
+        set({
+            filteredEmployees: filtered
+        })
+    },
+
+    //reset all filters and restore the filteredEmployees state
+    resetFilters: () => {
+        const {employees} = get();
+        set({
+            filteredEmployees: employees
+        })
+    },
+
+    //Bookmarks Actions
     addBookmark: emp => set(state => ({bookmarks: [...state.bookmarks,emp]})),
     removeBookmarks: id => set(state => ({bookmarks: state.bookmarks.filter(e => e.id != id)}))
 }))

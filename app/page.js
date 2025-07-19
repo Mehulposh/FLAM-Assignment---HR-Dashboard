@@ -2,7 +2,7 @@
 import EmployeeCard from "@/components/EmployeeCard/EmployeeCard";
 import Filter from "@/components/FilterDropdown/Filter";
 import SearchBar from "@/components/SearchBar/SearchBar";
-import useEmployeeStore from "@/store/Employee";
+import useEmployeeStore from "@/store/EmployeeStore";
 import { useEffect } from "react";
 
 export default  function Home() {
@@ -21,7 +21,7 @@ export default  function Home() {
  
   return (
     <main>
-      <div className="flex items-center gap-4 w-[80%]">
+      <div className="flex items-start justify-start gap-4 w-[80%] mt-5 mb-5">
         <SearchBar />
         <Filter onChange={handleFilter} />
 

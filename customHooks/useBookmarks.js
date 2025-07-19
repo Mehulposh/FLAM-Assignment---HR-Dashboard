@@ -1,9 +1,9 @@
-import useBookmarksStore from "@/store/Employee";
+import useEmployeeStore from "@/store/EmployeeStore";
 
 
 const useBookmarks = () => {
- const {bookmarks,addBookmar,removeBookmarks} = useBookmarksStore();
- return {bookmarks,addBookmar,removeBookmarks}
+ const {bookmarks,addBookmark,removeBookmarks} = useEmployeeStore();
+ return {bookmarks,addBookmark,removeBookmarks}
 }
 
 export default useBookmarks
