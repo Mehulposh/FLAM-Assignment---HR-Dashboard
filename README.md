@@ -27,16 +27,26 @@ A modern and responsive HR Dashboard for employee management, built as part of t
 
 ## 🎨 Screenshots
 
-### App Structure
+### Dashboard 
 <div align="center">
-  <img width="312" height="308" alt="App folder structure" src="https://github.com/user-attachments/assets/eef105a1-c65e-451c-9d59-c24998523072" />
+  <img width="312" height="308" alt="App folder structure" src="![alt text](image.png)" />
 </div>
 
-### Components Architecture
+### Bookmarks Page
 <div align="center">
-  <img width="331" height="655" alt="Components folder structure" src="https://github.com/user-attachments/assets/3e51e9fd-a948-4689-91aa-2c256be89453" />
+  <img width="331" height="655" alt="Components folder structure" src="![alt text](image-1.png)" />
 </div>
 
+### Analytics Page
+<div align="center">
+  <img width="331" height="655" alt="Components folder structure" src="![alt text](image-2.png) "/>
+</div>
+
+### Employee Details Page
+<div align="center">
+  <img width="331" height="655" alt="Components folder structure" src="![alt text](image-3.png)"/>
+  <img width="331" height="655" alt="Components folder structure" src="![alt text](image-4.png)"/>
+</div>
 ## 🚀 Installation
 
 1. **Clone the repository:**
