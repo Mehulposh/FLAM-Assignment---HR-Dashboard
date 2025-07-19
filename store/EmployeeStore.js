@@ -38,7 +38,7 @@ const useEmployeeStore = create((set,get) => ({
     //filter employees based on department and ratings
     filterEmployees: ({departments,ratings}) => {
         const {employees} = get();
-        console.log(departments , ratings)
+       
 
         const filtered = employees.filter(emp => {
         const deptMatch = departments.length === 0 || departments.includes(emp.department);
@@ -81,8 +81,31 @@ const useEmployeeStore = create((set,get) => ({
     },
 
     //Bookmarks Actions
-    addBookmark: emp => set(state => ({bookmarks: [...state.bookmarks,emp]})),
-    removeBookmarks: id => set(state => ({bookmarks: state.bookmarks.filter(e => e.id != id)}))
+    addBookmark: (emp) =>  {
+        set((state) => ({
+            bookmarks: [...state.bookmarks,emp]
+        }));
+        console.log('bookmarks', get().bookmarks)
+    },
+    
+    removeBookmark: (id) =>  {
+        set((state) => ({
+            bookmarks: state.bookmarks.filter(emp => emp.id  !== id)
+        }));
+        console.log('bookmarks', get().bookmarks)
+    },
+
+    //toggle action for bookmarks
+    toggleBookmark: (emp) => {
+        const {bookmarks,addBookmark,removeBookmark} = get();
+        const isBookmarked = bookmarks.some(b => b.id === emp.id);
+
+        if(isBookmarked){
+            removeBookmark(emp.id);
+        }else{
+            addBookmark(emp);
+        }
+    },
 }))
 
 export default useEmployeeStore

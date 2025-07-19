@@ -7,6 +7,9 @@ import useBookmarks from '@/customHooks/useBookmarks'
 import Link from 'next/link'
 
 const EmployeeCard = ({employee}) => {
+    const {toggleBookmark} = useBookmarks();
+
+    
   return (
     <div className='bg-gray-300 w-[350px] p-3 rounded'>
         <h2>Name: {employee.name}</h2>
@@ -18,7 +21,7 @@ const EmployeeCard = ({employee}) => {
             <Link href={`/employee/${employee.id}`}>
                 <Button>View</Button>
             </Link>
-            <Button>Bookmark</Button>
+            <Button onClick = {() => toggleBookmark(employee)}>Bookmark</Button>
             <Button>Promote</Button>
         </div>
 
