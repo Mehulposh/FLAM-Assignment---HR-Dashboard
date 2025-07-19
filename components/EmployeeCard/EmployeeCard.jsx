@@ -21,11 +21,11 @@ const EmployeeCard = ({employee}) => {
 
     
   return (
-    <div className='bg-gray-300 w-[350px] p-3 rounded'>
+    <div className='bg-gray-300 w-[350px] p-3 rounded '>
         <h2>Name: {employee.name}</h2>
         <p>Email: {employee.email}</p>
         <p>Age: {employee.age}</p>
-        <Badge text={employee.department} />
+        <p>Department: <Badge text={employee.department} /></p>
         <Rating rating={employee.rating} />
         <div>
             <Link href={`/employee/${employee.id}`}>

@@ -1,4 +1,6 @@
 'use client'
+import Badge from '@/components/Badge/Badge'
+import Rating from '@/components/Rating/Rating'
 import { getEmployeesByID } from '@/lib/api'
 import React, { useEffect, useState ,use} from 'react'
 
@@ -35,7 +37,13 @@ const page =  ({params}) => {
         <p>Age: {employee.age}</p>
         <p>Email: {employee.email}</p>
         <p>Department: {employee.department}</p>
-        <p>Rating: {employee.rating} *</p>
+        <p>Rating: <Rating rating={employee.rating}/> </p>
+        <p>Address: {employee.address}</p>
+        <div className='flex gap-5 items-center'>
+            {employee.badges.map((badge,idx) => (
+                <Badge text={badge} key={idx}/>
+            ))}
+        </div>
         <p className='text-justify'>{employee.bio}</p>
     </div>
     </div>

@@ -11,6 +11,17 @@ const useEmployeeStore = create((set,get) => ({
     //Bookmarks State
     bookmarks: [],
 
+    //dark mode state
+    isDarkMode: false,
+
+    //dark mode actions
+    //toggle mode
+    toggleMode: () => { 
+        set(state => ({
+            isDarkMode: !state.isDarkMode
+        }))
+    },
+
     //Employee Actions
 
     //fetch employees from api
