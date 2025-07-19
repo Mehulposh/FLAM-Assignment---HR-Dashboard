@@ -1,6 +1,7 @@
 'use client'
 import Badge from '@/components/Badge/Badge'
 import Rating from '@/components/Rating/Rating'
+import Tabs from '@/components/Tabs/Tabs'
 import { getEmployeesByID } from '@/lib/api'
 import React, { useEffect, useState ,use} from 'react'
 
@@ -28,26 +29,18 @@ const page =  ({params}) => {
     },[resolvedParams.id])
 
     if(!employee) {
-        return <p>Employee Not Found</p>
+        return <p className='text-2xl'>Employee Not Found</p>
     }
   return (
     <div className='flex justify-center'>
-    <div className='w-[50%] border boder-gray-400 p-5 flex flex-col gap-5 bg-gray-500 text-gray-200 font-semibold rounded-md mt-6   '>
-        <h1 >{employee.name}</h1>
-        <p>Age: {employee.age}</p>
-        <p>Email: {employee.email}</p>
-        <p>Department: {employee.department}</p>
-        <p>Rating: <Rating rating={employee.rating}/> </p>
-        <p>Address: {employee.address}</p>
-        <div className='flex gap-5 items-center'>
-            {employee.badges.map((badge,idx) => (
-                <Badge text={badge} key={idx}/>
-            ))}
-        </div>
-        <p className='text-justify'>{employee.bio}</p>
+    <div className='w-[70%] p-5 space-y-5 bg-gray-500 text-gray-200 font-semibold rounded-md mt-6   '>
+        <h1 className='text-2xl border-b border-gray-100 '>{employee.name}</h1>
+        <Tabs employee={employee}/>
     </div>
     </div>
   )
 }
 
 export default page
+
+
