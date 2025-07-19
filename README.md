@@ -28,26 +28,31 @@ A modern and responsive HR Dashboard for employee management, built as part of t
 ## 🎨 Screenshots
 
 ### Dashboard 
-<div align="center">
-  <img width="312" height="308" alt="App folder structure" src="![alt text](image.png)" />
+<div align="start">
+  <img width="330" height="600" alt="Screenshot 2025-07-19 203337" src="https://github.com/user-attachments/assets/5b9281d8-9fe5-4c97-8248-25336bab7743" />
+
 </div>
 
 ### Bookmarks Page
-<div align="center">
-  <img width="331" height="655" alt="Components folder structure" src="![alt text](image-1.png)" />
+<div align="start">
+  <img width="330" height="655" alt="Screenshot 2025-07-19 203553" src="https://github.com/user-attachments/assets/9771b5a2-da68-4436-93bd-4f60fa669a9c" />
+
 </div>
 
 ### Analytics Page
-<div align="center">
-  <img width="331" height="655" alt="Components folder structure" src="![alt text](image-2.png) "/>
+<div align="start">
+<img width="330" height="655" alt="Screenshot 2025-07-19 203700" src="https://github.com/user-attachments/assets/ae7f8603-ab9d-4957-8b7e-5ce3ddfebf1b" />
 </div>
 
 ### Employee Details Page
-<div align="center">
-  <img width="331" height="655" alt="Components folder structure" src="![alt text](image-3.png)"/>
-  <img width="331" height="655" alt="Components folder structure" src="![alt text](image-4.png)"/>
+<div align="start" gap='15'>
+  <img width="330" height="655" alt="Screenshot 2025-07-19 203829" src="https://github.com/user-attachments/assets/f518dc28-c742-4c2c-9a41-c4fd6dedb4dc" />
+
+  <img width="331" height="655" alt="image" src="https://github.com/user-attachments/assets/8d47e39f-b4dc-4cd0-aaad-1df76ddd9579" />
+
 </div>
-## 🚀 Installation
+
+##  🚀 Installation
 
 1. **Clone the repository:**
    ```bash
