@@ -19,7 +19,7 @@ const NewEmployee = ({closeModal}) => {
                 return;
             }
             else{
-                alert('FComplete the New Employee Form');
+                alert('Complete the New Employee Form');
             }
     
             setFormData({

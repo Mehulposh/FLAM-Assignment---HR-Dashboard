@@ -5,7 +5,7 @@ import SearchBar from "@/components/SearchBar/SearchBar";
 import useEmployeeStore from "@/store/EmployeeStore";
 import Modal from '@/components/Modal/Modal'
 import { useEffect, useState } from "react";
-import NewEmployee from "@/components/NewEmployee/NewEmployee";
+import NewEmployee from "@/components/NewUser/NewEmployee";
 import Button from "@/components/Button/Button";
 
 export default  function Home() {
