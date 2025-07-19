@@ -1,21 +1,26 @@
-
+'use client'
 import Header from '@/components/Header/Header';
 import '../styles/globals.css'  
 
+import useEmployeeStore from '@/store/EmployeeStore';
 
 
 
 
-export const metadata = {
-  title: "HR Dashboard",
-  description: "Track Employee Perforance",
-};
+
+
 
 export default function RootLayout({ children }) {
+  const isDarkMode= useEmployeeStore(state => state.isDarkMode)
+
+  
   return (
     <html lang="en">
+      <head>
+        <title>HR Dashboard</title>
+      </head>
       <body
-        className='bg-gray-200'
+        className={`${isDarkMode ? "bg-gray-700" : "bg-gray-200"}`}
       >
         <Header />
         <main>

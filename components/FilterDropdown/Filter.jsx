@@ -1,4 +1,5 @@
 'use client'
+import useEmployeeStore from '@/store/EmployeeStore'
 import React , {useEffect, useState}from 'react'
 
 const DEPARTMENTS = [ 'Engineering', 'Legal','Accounting','Training', 'Finance','R&D','Product Management','Human Resources','Marketing' , 'Support']
@@ -8,6 +9,7 @@ const RATINGS = [1, 2, 3, 4, 5]
 const Filter = ({onChange}) => {
     const [selectedDepartment, setSelectedDepartment] = useState([])
     const [selectedRating, setSelectedRating] = useState([])
+    const isDarkMode = useEmployeeStore(state => state.isDarkMode);
 
 
     const handleToggle = (value,setState,state) => {
@@ -28,7 +30,7 @@ const Filter = ({onChange}) => {
 
   return (
     <div className='flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5'>
-    <div className='font-semibold border-2 rounded border-blue-300 px-3 py-2'>
+    <div className={`font-semibold border-2 rounded border-blue-300 px-3 py-2 ${isDarkMode && "text-gray-200"}`}>
         <p className='text-center mb-3 text-sm sm:text-base'>DEPARTMENT</p>
         <div className='flex flex-col gap-2 max-h-32 overflow-y-auto sm:flex-wrap sm:h-20 sm:max-h-none sm:overflow-visible'>
             {DEPARTMENTS.map((dept,idx) => (
@@ -45,7 +47,7 @@ const Filter = ({onChange}) => {
         </div>
     </div>
     
-    <div className='font-semibold border-2 rounded border-blue-300 px-3 py-2'>
+    <div className={`font-semibold border-2 rounded border-blue-300 px-3 py-2 ${isDarkMode && "text-gray-200"}`}>
         <p className='text-center mb-3 text-sm sm:text-base'>RATINGS</p>
         <div className='flex flex-col gap-2 max-h-24 overflow-y-auto sm:flex-wrap sm:h-10 sm:max-h-none sm:overflow-visible'>
             {RATINGS.map((rating,idx) => (

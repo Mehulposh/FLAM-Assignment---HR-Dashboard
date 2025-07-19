@@ -17,9 +17,11 @@ const useEmployeeStore = create((set,get) => ({
     //dark mode actions
     //toggle mode
     toggleMode: () => { 
-        set(state => ({
-            isDarkMode: !state.isDarkMode
-        }))
+        set(state => {
+            const newMode = !state.isDarkMode;
+            localStorage.setItem('isDarkMode', JSON.stringify(newMode));
+            return {isDarkMode: newMode}
+        })
     },
 
     //Employee Actions
