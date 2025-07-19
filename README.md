@@ -68,20 +68,31 @@ A modern and responsive HR Dashboard for employee management, built as part of t
 
 ```
 FLAM-Assignment-HR-Dashboard/
-├── src/
-│   ├── components/
-│   │   ├── Dashboard/
-│   │   ├── EmployeeList/
-│   │   ├── Filters/
-│   │   └── UI/
-│   ├── hooks/
-│   ├── store/
-│   ├── utils/
-│   ├── styles/
-│   └── App.jsx
-├── public/
-├── package.json
-└── README.md
+├──app
+|   ├───analytics
+|   ├───bookmarks
+|   └───employee
+|       └───[id]
+├──components
+|   ├───Badge
+|   ├───Button
+|   ├───Chart
+|   ├───EmployeeCard
+|   ├───Feedback
+|   ├───FilterDropdown
+|   ├───Header
+|   ├───Modal
+|   ├───Rating
+|   ├───SearchBar
+|   └───Tabs
+├───customHooks
+├───lib
+├───store
+├───styles
+├───jsconfig.json
+├───next.config.mjs
+├───package.json
+├───README.MD
 ```
 
 ## 🎯 Key Features
