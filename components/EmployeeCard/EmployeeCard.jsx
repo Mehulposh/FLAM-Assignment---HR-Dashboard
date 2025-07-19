@@ -5,10 +5,13 @@ import Badge from '../Badge/Badge'
 import Button from '../Button/Button'
 import useBookmarks from '@/customHooks/useBookmarks'
 import Link from 'next/link'
+import useEmployeeStore from '@/store/EmployeeStore'
 
 const EmployeeCard = ({employee}) => {
     const {toggleBookmark} = useBookmarks();
     const [text,setText] = useState('Promote');
+
+    const isDarkMode = useEmployeeStore(state => state.isDarkMode)
 
     const handleText = ()=> {
       if(text === 'Promote'){
@@ -21,7 +24,7 @@ const EmployeeCard = ({employee}) => {
 
     
   return (
-    <div className='bg-gray-300 w-[350px] p-3 rounded '>
+    <div className={`w-[350px] p-3 rounded ${isDarkMode ? "bg-gray-100" : "bg-gray-300 "}`}>
         <h2>Name: {employee.name}</h2>
         <p>Email: {employee.email}</p>
         <p>Age: {employee.age}</p>

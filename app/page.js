@@ -28,7 +28,7 @@ export default  function Home() {
   }
  
   return (
-    <main className="px-4" >
+    <main >
       <div className="w-full px-4 mt-5 mb-5">
         <div className="flex flex-col gap-4 md:flex-col md:items-center md:justify-between max-w-4xl mx-auto">
           <div className="w-full md:flex-1 md:max-w-md">
@@ -40,9 +40,9 @@ export default  function Home() {
         </div>
       </div>
       <div>
-        <Button onClick={openModal}>Add Employee</Button>
+        <Button onClick={openModal} className='m-5'>Add Employee</Button>
       </div>
-      <div className="flex flex-wrap gap-4 p-3">
+      <div className="flex flex-wrap gap-4 p-5">
         
         {filteredEmployees.map(emp => (
           <EmployeeCard key={emp.id} employee={emp}/>

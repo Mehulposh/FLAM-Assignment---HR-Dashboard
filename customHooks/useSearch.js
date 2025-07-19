@@ -5,7 +5,7 @@ import React,{useState} from 'react'
 
 const useSearch = () => {
  const [query, setQuery] = useState('');
- const {searchEmployees, resetFilters} = useEmployeeStore();
+ const {searchEmployees} = useEmployeeStore();
 
  const handleSearch = (term) => {
     setQuery(term);
