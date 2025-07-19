@@ -31,7 +31,17 @@ export default function Tabs({ employee }) {
                 <p className='text-justify'>{employee.bio}</p>
             </div>
         )}
-        {tab === 'projects' && <p>Projects here</p>}
+
+        {tab === 'projects' && (
+            <div>
+                <ol className='space-y-4'>
+                    {employee.projects.map((pro,idx) => (
+                        <li key={idx} >{pro}</li>
+                    ))}
+                </ol>
+            </div>
+        )}
+
         {tab === 'feedback' && (
             <FeedbackForm />
         )}
