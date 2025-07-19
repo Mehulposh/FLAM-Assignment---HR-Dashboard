@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import Rating from '../Rating/Rating'
 import Badge from '../Badge/Badge'
 import Button from '../Button/Button'
@@ -8,6 +8,16 @@ import Link from 'next/link'
 
 const EmployeeCard = ({employee}) => {
     const {toggleBookmark} = useBookmarks();
+    const [text,setText] = useState('Promote');
+
+    const handleText = ()=> {
+      if(text === 'Promote'){
+        setText('Assign to Project')
+      }
+      else{
+        setText('Promote')
+      }
+    };
 
     
   return (
@@ -22,7 +32,7 @@ const EmployeeCard = ({employee}) => {
                 <Button>View</Button>
             </Link>
             <Button onClick = {() => toggleBookmark(employee)}>Bookmark</Button>
-            <Button>Promote</Button>
+            <Button onClick={handleText}>{text}</Button>
         </div>
 
     </div>

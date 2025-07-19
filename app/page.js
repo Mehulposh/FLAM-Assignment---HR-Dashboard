@@ -21,10 +21,15 @@ export default  function Home() {
  
   return (
     <main>
-      <div className="flex items-start justify-start gap-4 w-[80%] mt-5 mb-5">
-        <SearchBar />
-        <Filter onChange={handleFilter} />
-
+      <div className="w-full px-4 mt-5 mb-5">
+        <div className="flex flex-col gap-4 md:flex-col md:items-center md:justify-between max-w-4xl mx-auto">
+          <div className="w-full md:flex-1 md:max-w-md">
+            <SearchBar />
+          </div>
+          <div className="w-full md:w-auto md:min-w-[250px]">
+            <Filter onChange={handleFilter} />
+          </div>
+        </div>
       </div>
       <div className="flex flex-wrap gap-4 p-3">
         {filteredEmployees.map(emp => (

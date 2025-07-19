@@ -27,40 +27,41 @@ const Filter = ({onChange}) => {
 
 
   return (
-    <div className='flex items-start gap-5'>
-        <div className='font-semibold border-2 rounded border-blue-300 px-2'>
-            <p className='text-center mb-3'>DEPARTMENT</p>
-            <div className='flex flex-col flex-wrap h-20  gap-2'>
-                
-                {DEPARTMENTS.map((dept,idx) => (
-                    <label key={idx}  >
-                        <input 
-                            type='checkbox'
-                            checked = {selectedDepartment.includes(dept)}
-                            onChange={() => handleToggle(dept,setSelectedDepartment,selectedDepartment)}
-                        />
-                        <span>{dept}</span>
-                    </label>
-                ))}
-            </div>
-        </div>
-        <div className='font-semibold border-2 rounded border-blue-300 px-2'>
-            <p>RATINGS</p>
-            <div className='flex flex-col h-10 flex-wrap gap-2 '>
-                
-                {RATINGS.map((rating,idx) => (
-                    <label key={idx}  >
-                        <input 
-                            type='checkbox'
-                            checked = {selectedRating.includes(rating)}
-                            onChange={() => handleToggle(rating,setSelectedRating,selectedRating)}
-                        />
-                        <span>{rating}</span>
-                    </label>
-                ))}
-            </div>
+    <div className='flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5'>
+    <div className='font-semibold border-2 rounded border-blue-300 px-3 py-2'>
+        <p className='text-center mb-3 text-sm sm:text-base'>DEPARTMENT</p>
+        <div className='flex flex-col gap-2 max-h-32 overflow-y-auto sm:flex-wrap sm:h-20 sm:max-h-none sm:overflow-visible'>
+            {DEPARTMENTS.map((dept,idx) => (
+                <label key={idx} className='flex items-center gap-2 text-sm cursor-pointer'>
+                    <input 
+                        type='checkbox'
+                        className='w-4 h-4'
+                        checked = {selectedDepartment.includes(dept)}
+                        onChange={() => handleToggle(dept,setSelectedDepartment,selectedDepartment)}
+                    />
+                    <span className='select-none'>{dept}</span>
+                </label>
+            ))}
         </div>
     </div>
+    
+    <div className='font-semibold border-2 rounded border-blue-300 px-3 py-2'>
+        <p className='text-center mb-3 text-sm sm:text-base'>RATINGS</p>
+        <div className='flex flex-col gap-2 max-h-24 overflow-y-auto sm:flex-wrap sm:h-10 sm:max-h-none sm:overflow-visible'>
+            {RATINGS.map((rating,idx) => (
+                <label key={idx} className='flex items-center gap-2 text-sm cursor-pointer'>
+                    <input 
+                        type='checkbox'
+                        className='w-4 h-4'
+                        checked = {selectedRating.includes(rating)}
+                        onChange={() => handleToggle(rating,setSelectedRating,selectedRating)}
+                    />
+                    <span className='select-none'>{rating}</span>
+                </label>
+            ))}
+        </div>
+    </div>
+</div>
   )
 }
 

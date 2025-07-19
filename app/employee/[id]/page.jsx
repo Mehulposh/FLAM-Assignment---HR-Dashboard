@@ -31,7 +31,7 @@ const page =  ({params}) => {
   return (
     <div className='flex justify-center'>
     <div className='w-[50%] border boder-gray-400 p-5 flex flex-col gap-5 bg-gray-500 text-gray-200 font-semibold rounded-md mt-6   '>
-        <h1>{employee.name}</h1>
+        <h1 >{employee.name}</h1>
         <p>Age: {employee.age}</p>
         <p>Email: {employee.email}</p>
         <p>Department: {employee.department}</p>
