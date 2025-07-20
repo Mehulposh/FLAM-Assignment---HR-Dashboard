@@ -4,15 +4,17 @@ import Badge from '../Badge/Badge'
 import Rating from '../Rating/Rating'
 import { useState } from 'react'
 import FeedbackForm from '../Feedback/FeedbackForm'
+import useEmployeeStore from '@/store/EmployeeStore'
 
 export default function Tabs({ employee }) {
+  const isDarkMode = useEmployeeStore(state => state.isDarkMode);
   const [tab, setTab] = useState('overview')
 
   return (
     <>
       <div className="flex gap-2 mb-2 flex-wrap">
         {['overview', 'projects', 'feedback'].map(t => (
-          <Button key={t} onClick={() => setTab(t)} className={tab === t ? 'bg-blue-600' : ''}>{t}</Button>
+          <Button key={t} onClick={() => setTab(t)} className={`${tab === t ? (isDarkMode ? "bg-yellow-600 " : "bg-blue-600" ) :  null}`}>{t}</Button>
         ))}
       </div>
       <div>
