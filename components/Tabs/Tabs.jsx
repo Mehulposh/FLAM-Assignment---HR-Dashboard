@@ -21,6 +21,7 @@ export default function Tabs({ employee }) {
         {tab === 'overview' && (
             <div className='space-y-4'>
                 <p>Age: {employee.age}</p>
+                <p>Phone No: 9919399013</p>
                 <p>Email: {employee.email}</p>
                 <p>Department: {employee.department}</p>
                 <p>Rating: <Rating rating={employee.rating}/> </p>
